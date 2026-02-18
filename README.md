@@ -30,7 +30,7 @@ A full-stack expense tracking application built with **React (Vite)** and **Node
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/expense-tracker-assessment.git
+git clone https://github.com/Suryansh-web/expense-tracker-assessment.git
 cd expense-tracker-assessment
 ```
 
