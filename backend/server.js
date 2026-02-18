@@ -10,7 +10,16 @@ const { Expense, IdempotencyLog } = require('./models');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://expense-tracker-assessment-i2tjia462.vercel.app"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -101,3 +110,4 @@ app.get('/expenses', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
