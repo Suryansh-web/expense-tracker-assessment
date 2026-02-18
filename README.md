@@ -68,3 +68,50 @@ npm run dev
 
 The application will be available at `http://localhost:5173`.
 
+## API Endpoints
+
+### `GET /expenses`
+Retrieve a list of expenses.
+-   **Query Params**:
+    -   `category` (optional): Filter by category name (e.g., `Food`).
+    -   `sort` (optional): Sort by date (`date_desc` for newest first).
+
+### `POST /expenses`
+Add a new expense.
+-   **Headers**: `Idempotency-Key` (UUID) required for idempotency.
+-   **Body**:
+    ```json
+    {
+      "amount": 1234,        // Amount in cents (integer)
+      "category": "Food",
+      "description": "Lunch",
+      "date": "2023-10-27T12:00"
+    }
+    ```
+
+### `DELETE /expenses/:id`
+Delete an expense by ID.
+-   **Params**: `id` (UUID of the expense).
+
+## Project Structure
+
+```
+expense-tracker/
+├── backend/
+│   ├── expense_tracker.db  # SQLite database
+│   ├── package.json        # Backend dependencies
+│   └── server.js           # API server entry point
+├── frontend/
+│   ├── src/
+│   │   ├── components/     # React components (ExpenseForm, ExpenseList)
+│   │   ├── App.jsx         # Main application logic
+│   │   ├── main.jsx        # Entry point
+│   │   └── index.css       # Tailwind imports
+│   ├── package.json        # Frontend dependencies
+│   └── vite.config.js      # Vite configuration
+└── README.md
+```
+
+## License
+This project is open-source and available under the MIT License.
+
