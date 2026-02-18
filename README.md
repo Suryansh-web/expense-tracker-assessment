@@ -50,3 +50,21 @@ node server.js
 ```
 
 The server will run on `http://localhost:3000`. It will automatically create the `expense_tracker.db` SQLite database file.
+
+### 3. Frontend Setup
+
+Open a new terminal, navigate to the frontend directory, and install dependencies:
+
+```bash
+cd ../frontend
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
